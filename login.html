@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - LIC Agent Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="logo.png" alt="LIC Logo">
+                    <h1>LIC Agent Portal</h1>
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <a href='home.html'>Home</a>
+                    <a href='resources.html'>Resources</a>
+                    <a href='about.html'>About</a>
+                    <a href='contact.html'>Contact</a>
+                    <a class='btn btn-outline' href='login.html'>Login</a>
+                    <a href="register.html" class="btn btn-primary">Become an Agent</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Login Section -->
+    <section class="login-section" style="padding: 80px 0; background-color: var(--light-gray);">
+        <div class="container">
+            <div class="login-container" style="max-width: 400px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
+                <h2 class="text-center" style="margin-bottom: 30px;">Agent Login</h2>
+                
+                <!-- Login Form -->
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="agentId">Agent ID</label>
+                        <input type="text" id="agentId" name="agentId" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div style="position: relative;">
+                            <input type="password" id="password" name="password" required>
+                            <i class="fas fa-eye" id="togglePassword" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+                        </div>
+                    </div>
+                    <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <input type="checkbox" id="remember" name="remember">Remember me</input>
+                            <label for="remember"></label>
+                        </div>
+                        <a href="#" style="color: var(--primary); text-decoration: none;">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                </form>
+
+                <!-- Divider -->
+                <div style="text-align: center; margin: 20px 0;">
+                    <span style="color: var(--dark); position: relative; padding: 0 10px; background: white;">OR</span>
+                    <hr style="margin: -10px 0 0 0;">
+                </div>
+
+                <!-- Alternative Login Options -->
+                <div style="text-align: center;">
+                    <p style="margin-bottom: 20px;">Login with</p>
+                    <div class="social-login">
+                        <a href="#" class="social-btn">
+                            <i class="fab fa-google"></i>
+                            <span>Google</span>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Registration Link -->
+                <p style="text-align: center; margin-top: 20px;">
+                    Not an agent yet? 
+                    <a href="register.html" style="color: var(--primary); text-decoration: none;">Register here</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About LIC</h3>
+                    <p>Life Insurance Corporation of India (LIC) is India's largest and most trusted insurance provider with over 60 years of service to the nation.</p>
+                    <div class="social-links mt-2">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="login.html">Agent Login</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="leaderboard.html">Leaderboard</a></li>
+                        <li><a href="resources.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Policy Types</h3>
+                    <ul class="footer-links">
+                        <li><a href="resources.html">Term Insurance</a></li>
+                        <li><a href="resources.html">Endowment Plans</a></li>
+                        <li><a href="resources.html">ULIPs</a></li>
+                        <li><a href="resources.html">Pension Plans</a></li>
+                        <li><a href="resources.html">Child Plans</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 LIC Agent Portal. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Toggle password visibility
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const password = document.getElementById('password');
+            if (password.type === 'password') {
+                password.type = 'text';
+                this.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                password.type = 'password';
+                this.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        });
+    </script>
+</body>
+</html>

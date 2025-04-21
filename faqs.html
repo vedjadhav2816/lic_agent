@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIC Agent Portal - FAQs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* FAQs Section */
+        .faqs {
+            background-color: var(--white);
+            padding: 60px 0;
+        }
+
+        .faqs-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question i {
+            color: var(--secondary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            display: none;
+            color: var(--dark);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Search Bar */
+        .faq-search {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .faq-search input {
+            width: 100%;
+            max-width: 500px;
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-search input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 5px rgba(0, 48, 135, 0.3);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .faqs-container {
+                padding: 0 15px;
+            }
+
+            .faq-question {
+                font-size: 1rem;
+                padding: 15px;
+            }
+
+            .faq-answer {
+                font-size: 0.9rem;
+                padding: 0 15px 15px;
+            }
+
+            .faq-search input {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="logo.png" alt="LIC Logo">
+                    <h1>LIC Agent Portal</h1>
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <a href="home.html">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="leaderboard.html">Leaderboard</a>
+                    <a href="faqs.html" class="active">FAQs</a>
+                    <a class="btn btn-outline" href="login.html">Login</a>
+                    <a href="register.html" classởi
+
+System: Here's the complete `faqs.html` page, continuing from where the previous input was cut off. The page includes a fully functional FAQs section with an accordion-style layout, a search bar, and consistent header and footer as per the provided LIC Agent Portal code. The styling and theme match the original code and the previously created leaderboard page.
+
+---
+
+### `faqs.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIC Agent Portal - FAQs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* FAQs Section */
+        .faqs {
+            background-color: var(--white);
+            padding: 60px 0;
+        }
+
+        .faqs-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question i {
+            color: var(--secondary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            display: none;
+            color: var(--dark);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Search Bar */
+        .faq-search {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .faq-search input {
+            width: 100%;
+            max-width: 500px;
+            padding: 12px 20
+
+px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-search input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 5px rgba(0, 48, 135, 0.3);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .faqs-container {
+                padding: 0 15px;
+            }
+
+            .faq-question {
+                font-size: 1rem;
+                padding: 15px;
+            }
+
+            .faq-answer {
+                font-size: 0.9rem;
+                padding: 0 15px 15px;
+            }
+
+            .faq-search input {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="logo.png" alt="LIC Logo">
+                    <h1>LIC Agent Portal</h1>
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <a href="home.html">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="leaderboard.html">Leaderboard</a>
+                    <a href="faqs.html" class="active">FAQs</a>
+                    <a class="btn btn-outline" href="login.html">Login</a>
+                    <a href="register.html" class="btn btn-primary">Become an Agent</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- FAQs Section -->
+    <section class="faqs" id="faqs">
+        <div class="container">
+            <h2 class="section-title text-center">Frequently Asked Questions</h2>
+            <div class="faqs-container">
+                <div class="faq-search">
+                    <input type="text" id="faqSearch" placeholder="Search FAQs..." />
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Who can become an LIC agent?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Anyone above 18 years of age with a minimum qualification of 10th standard (or equivalent) can apply to become an LIC agent. No prior experience is required, and we provide comprehensive training.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is the process to become an LIC agent?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        The process involves four steps: (1) Apply online or at an LIC branch, (2) Attend training, (3) Clear the IRDAI licensing exam, and (4) Start selling as an official LIC agent. Our team supports you at every step.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How much can an LIC agent earn?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Earnings are commission-based with unlimited potential. Agents earn commissions on policies sold, renewals, and bonuses for high performance. Top agents can earn significant incomes based on their efforts.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is training provided for new agents?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, LIC provides comprehensive training covering insurance fundamentals, sales techniques, and product knowledge. Training is free and designed to prepare you for the IRDAI exam and your career.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I work as an LIC agent part-time?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, you can work as an LIC agent part-time. This flexibility allows you to balance other commitments while building your career in insurance.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What support does LIC provide to agents?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        LIC offers extensive support, including training, marketing materials, access to 2,000+ branches, digital tools, and a network of 1.2 million agents for guidance and mentorship.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do I take the IRDAI licensing exam?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        After completing the mandatory training, you can register for the IRDAI exam through LIC. The exam tests basic insurance knowledge, and LIC provides study materials and mock tests to help you prepare.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About LIC</h3>
+                    <p>Life Insurance Corporation of India (LIC) is India's largest and most trusted insurance provider with over 60 years of service to the nation.</p>
+                    <div class="social-links mt-2">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="login.html">Agent Login</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="leaderboard.html">Leaderboard</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Policy Types</h3>
+                    <ul class="footer-links">
+                        <li><a href="resources.html">Term Insurance</a></li>
+                        <li><a href="resources.html">Endowment Plans</a></li>
+                        <li><a href="resources.html">ULIPs</a></li>
+                        <li><a href="resources.html">Pension Plans</a></li>
+                        <li><a href="resources.html">Child Plans</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 LIC Agent Portal. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                const isActive = answer.classList.contains('active');
+
+                // Close all other FAQs
+                document.querySelectorAll('.faq-answer').forEach(ans => ans.classList.remove('active'));
+                document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+                document.querySelectorAll('.faq-question i').forEach(i => i.style.transform = 'rotate(0deg)');
+
+                // Toggle current FAQ
+                if (!isActive) {
+                    answer.classList.add('active');
+                    question.classList.add('active');
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Search functionality
+        document.getElementById('faqSearch').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Hamburger menu toggle
+        document.getElementById('hamburger').addEventListener('click', () => {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

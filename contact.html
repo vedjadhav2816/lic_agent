@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - LIC Agent Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header (Same as index.html) -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="logo.png" alt="LIC Logo">
+                    <h1>LIC Agent Portal</h1>
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <a href='home.html'>Home</a>
+                    <a href='resources.html'>Resources</a>
+                    <a href='about.html'>About</a>
+                    <a href='contact.html'>Contact</a>
+                    <a class='btn btn-outline' href='login.html'>Login</a>
+                    <a href="register.html" class="btn btn-primary">Become an Agent</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="hero" style="padding: 60px 0;">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our support team for any queries or assistance</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" style="padding: 60px 0; background-color: var(--white);">
+        <div class="container">
+            <div class="registration-container" style="align-items: flex-start;">
+                <!-- Contact Information -->
+                <div class="registration-text">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-info mt-4">
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            Central Office, Yogakshema Building,
+                            <br>Jeevan Bima Marg, Mumbai,
+                            <br>Maharashtra 400021
+                        </p>
+                        <p>
+                            <i class="fas fa-phone"></i>
+                            1800-258-9090 (Toll Free)
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            support@licindia.in
+                        </p>
+                        <p>
+                            <i class="fas fa-clock"></i>
+                            Monday - Friday: 9:00 AM - 6:00 PM
+                        </p>
+                    </div>
+                    
+                    <!-- Social Media Links -->
+                    <h3 class="mt-4">Connect With Us</h3>
+                    <div class="social-links mt-2">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="registration-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select Subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="career">Career Related</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" style="padding: 0;">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.7325751377795!2d72.83310561489993!3d18.93990198717068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1e0f5c3d5ed%3A0x912c0db0acc8df2c!2sLIC%20Central%20Office!5e0!3m2!1sen!2sin!4v1650881718082!5m2!1sen!2sin" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" style="padding: 60px 0; background-color: var(--light-gray);">
+        <div class="container">
+            <h2 class="section-title text-center">Frequently Asked Questions</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-question"></i></div>
+                    <div class="step-content">
+                        <h3>How can I become an LIC agent?</h3>
+                        <p>You can register through our online portal or visit your nearest LIC branch. Complete the registration process and attend the required training.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-question"></i></div>
+                    <div class="step-content">
+                        <h3>What are the working hours?</h3>
+                        <p>As an LIC agent, you have flexible working hours. You can manage your schedule according to your convenience.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number"><i class="fas fa-question"></i></div>
+                    <div class="step-content">
+                        <h3>How long does it take to get a response?</h3>
+                        <p>Our team typically responds to inquiries within 24-48 business hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About LIC</h3>
+                    <p>Life Insurance Corporation of India (LIC) is India's largest and most trusted insurance provider with over 60 years of service to the nation.</p>
+                    <div class="social-links mt-2">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="login.html">Agent Login</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="leaderboard.html">Leaderboard</a></li>
+                        <li><a href="resources.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Policy Types</h3>
+                    <ul class="footer-links">
+                        <li><a href="resources.html">Term Insurance</a></li>
+                        <li><a href="resources.html">Endowment Plans</a></li>
+                        <li><a href="resources.html">ULIPs</a></li>
+                        <li><a href="resources.html">Pension Plans</a></li>
+                        <li><a href="resources.html">Child Plans</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 LIC Agent Portal. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIC Agent Leaderboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Leaderboard Section */
+        .leaderboard {
+            background-color: var(--white);
+            padding: 60px 0;
+        }
+
+        .leaderboard-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .leaderboard-table th,
+        .leaderboard-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .leaderboard-table th {
+            background-color: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .leaderboard-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .leaderboard-table tr:hover {
+            background-color: var(--secondary-light);
+            transition: background-color 0.3s ease;
+        }
+
+        .leaderboard-table .rank {
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .leaderboard-table .top-rank {
+            color: #FFD700; /* Gold for top ranks */
+            font-size: 1.2rem;
+        }
+
+        .leaderboard-table img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .filter-group select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .filter-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .leaderboard-table th,
+            .leaderboard-table td {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            .leaderboard-table img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .filter-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .filter-group {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .filter-group select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="logo.png" alt="LIC Logo">
+                    <h1>LIC Agent Portal</h1>
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <a href="home.html">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="leaderboard.html" class="active">Leaderboard</a>
+                    <a class="btn btn-outline" href="login.html">Login</a>
+                    <a href="register.html" class="btn btn-primary">Become an Agent</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Leaderboard Section -->
+    <section class="leaderboard" id="leaderboard">
+        <div class="container">
+            <h2 class="section-title text-center">Top LIC Agents Leaderboard</h2>
+            <div class="leaderboard-container">
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <select id="regionFilter">
+                            <option value="all">All Regions</option>
+                            <option value="north">North India</option>
+                            <option value="south">South India</option>
+                            <option value="east">East India</option>
+                            <option value="west">West India</option>
+                        </select>
+                        <select id="timeFilter">
+                            <option value="monthly">This Month</option>
+                            <option value="quarterly">This Quarter</option>
+                            <option value="yearly">This Year</option>
+                        </select>
+                    </div>
+                </div>
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Agent Name</th>
+                            <th>Points</th>
+                            <th>Policies Sold</th>
+                            <th>Region</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboardBody">
+                        <!-- Leaderboard data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About LIC</h3>
+                    <p>Life Insurance Corporation of India (LIC) is India's largest and most trusted insurance provider with over 60 years of service to the nation.</p>
+                    <div class="social-links mt-2">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="login.html">Agent Login</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="leaderboard.html">Leaderboard</a></li>
+                        <li><a href="resources.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Policy Types</h3>
+                    <ul class="footer-links">
+                        <li><a href="resources.html">Term Insurance</a></li>
+                        <li><a href="resources.html">Endowment Plans</a></li>
+                        <li><a href="resources.html">ULIPs</a></li>
+                        <li><a href="resources.html">Pension Plans</a></li>
+                        <li><a href="resources.html">Child Plans</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 LIC Agent Portal. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample leaderboard data
+        const leaderboardData = [
+            { rank: 1, name: "Rajesh Kumar", points: 1250, policies: 85, region: "North India", img: "https://randomuser.me/api/portraits/men/32.jpg" },
+            { rank: 2, name: "Priya Sharma", points: 1100, policies: 72, region: "South India", img: "https://randomuser.me/api/portraits/women/44.jpg" },
+            { rank: 3, name: "Anil Patel", points: 950, policies: 65, region: "West India", img: "https://randomuser.me/api/portraits/men/67.jpg" },
+            { rank: 4, name: "Sunita Gupta", points: 800, policies: 50, region: "East India", img: "https://randomuser.me/api/portraits/women/23.jpg" },
+            { rank: 5, name: "Vikram Singh", points: 750, policies: 45, region: "North India", img: "https://randomuser.me/api/portraits/men/45.jpg" },
+            { rank: 6, name: "Meena Rao", points: 700, policies: 40, region: "South India", img: "https://randomuser.me/api/portraits/women/56.jpg" },
+            { rank: 7, name: "Kiran Desai", points: 650, policies: 38, region: "West India", img: "https://randomuser.me/api/portraits/men/12.jpg" },
+            { rank: 8, name: "Suman Yadav", points: 600, policies: 35, region: "East India", img: "https://randomuser.me/api/portraits/women/78.jpg" },
+            { rank: 9, name: "Arjun Mehta", points: 550, policies: 30, region: "North India", img: "https://randomuser.me/api/portraits/men/89.jpg" },
+            { rank: 10, name: "Neha Joshi", points: 500, policies: 28, region: "South India", img: "https://randomuser.me/api/portraits/women/90.jpg" }
+        ];
+
+        // Function to populate leaderboard
+        function populateLeaderboard(data) {
+            const leaderboardBody = document.getElementById('leaderboardBody');
+            leaderboardBody.innerHTML = '';
+            data.forEach(agent => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="rank ${agent.rank <= 3 ? 'top-rank' : ''}">${agent.rank}</td>
+                    <td><img src="${agent.img}" alt="${agent.name}">${agent.name}</td>
+                    <td>${agent.points}</td>
+                    <td>${agent.policies}</td>
+                    <td>${agent.region}</td>
+                `;
+                leaderboardBody.appendChild(row);
+            });
+        }
+
+        // Filter leaderboard data
+        function filterLeaderboard() {
+            const region = document.getElementById('regionFilter').value;
+            const time = document.getElementById('timeFilter').value;
+
+            let filteredData = leaderboardData;
+
+            if (region !== 'all') {
+                filteredData = filteredData.filter(agent => agent.region === region);
+            }
+
+            // Simulate time-based filtering (in a real app, this would involve API calls)
+            if (time === 'quarterly') {
+                filteredData = filteredData.map(agent => ({
+                    ...agent,
+                    points: Math.round(agent.points * 0.75),
+                    policies: Math.round(agent.policies * 0.75)
+                }));
+            } else if (time === 'yearly') {
+                filteredData = filteredData.map(agent => ({
+                    ...agent,
+                    points: agent.points * 2,
+                    policies: agent.policies * 2
+                }));
+            }
+
+            populateLeaderboard(filteredData);
+        }
+
+        // Event listeners for filters
+        document.getElementById('regionFilter').addEventListener('change', filterLeaderboard);
+        document.getElementById('timeFilter').addEventListener('change', filterLeaderboard);
+
+        // Initial population
+        populateLeaderboard(leaderboardData);
+
+        // Hamburger menu toggle
+        document.getElementById('hamburger').addEventListener('click', () => {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
